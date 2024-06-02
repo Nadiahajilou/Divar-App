@@ -4,20 +4,21 @@ import toast from "react-hot-toast";
 import styles from "./sendotpform.module.css";
 
 function SendOTP({ setMobile, mobile, setStep }) {
-
+  const [warn, setWarn] = useState(false);
   const submitHandler = async (event) => {
     event.preventDefault();
-    if (mobile.length !== 11)return
 
-      
-    
-
+    if (mobile.length !== 11) {
+      setMobile('');
+      setWarn('لطفا شماره تلفن معتبر وارد کنید ');
+      return;
+    }
     const { response, error } = await sendOtp(mobile);
     if (response) setStep(2);
     if (error) {
       return toast.error(error.message);
     }
-    console.log({ response, error });
+
   };
   return (
     <div>
@@ -29,6 +30,7 @@ function SendOTP({ setMobile, mobile, setStep }) {
         </span>
         <label htmlFor="input"> شماره موبایل خود را وارد کنید </label>
         
+        {warn && <span >{warn}</span>}
         <input
           type="text"
           id="input"

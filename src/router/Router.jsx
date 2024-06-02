@@ -12,7 +12,7 @@ import Loader from "../components/modules/Loader";
 function Router() {
   const { data, isLoading, error } = useQuery(["profile"], getUserProfile);
   console.log({ data, isLoading, error });
-if(isLoading)return <Loader/>
+  if (isLoading) return <Loader />;
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />

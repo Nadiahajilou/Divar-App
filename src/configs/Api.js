@@ -8,10 +8,6 @@ const Api = axios.create({
     "Content-Type": "application/json",
   },
 });
-//Understanding error.config
-// When an error occurs, you can access the config property of the error object.
-//This config property holds the original configuration of the request that resulted in the error.
-//ba error.config mitonim be req asli dasresi peyda konim(error.config is the configuration object of the failed request.)
 Api.interceptors.request.use(
   (request) => {
     const accessToken = getCookie("accessToken");
@@ -24,7 +20,11 @@ Api.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-// expire shudan accesstoken
+// expire shudan accesstoken:
+//Understanding error.config
+// When an error occurs, you can access the config property of the error object.
+//This config property holds the original configuration of the request that resulted in the error.
+//ba error.config mitonim be req asli dasresi peyda konim(error.config is the configuration object of the failed request.)
 Api.interceptors.response.use(
   (response) => {
     return response;

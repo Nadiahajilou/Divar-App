@@ -7,18 +7,19 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import defaultOptions from "./configs/reactQuery";
-
+import Layout from "./layout/Layout";
 
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: defaultOptions,
   });
 
-
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Router />
+        <Layout>
+          <Router />
+        </Layout>
       </BrowserRouter>
       <ReactQueryDevtools />
     </QueryClientProvider>
