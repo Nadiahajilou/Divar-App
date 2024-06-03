@@ -41,6 +41,7 @@ Api.interceptors.response.use(
  
       return Api(originalReq)
     }
+    return Promise.reject(error);
   }
 );
 
