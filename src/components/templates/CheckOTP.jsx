@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { checkOtp } from "../../services/auth";
-// import toast from "react-hot-toast";
+
 import { setCookie } from "../../utils/cookies";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";

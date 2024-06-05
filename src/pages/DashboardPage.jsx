@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import AddPosts from "../components/templates/AddPosts";
+import PostList from "../components/templates/PostList";
 
 function DashboardPage() {
   return (
-    <div>DashboardPage</div>
-  )
+    <div>
+      <AddPosts />
+      <PostList/>
+    </div>
+  );
 }
 
-export default DashboardPage
+export default DashboardPage;

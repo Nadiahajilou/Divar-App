@@ -8,7 +8,7 @@ const getCategory = () => {
 };
 
 const deleteCategory=(id)=>{
-  return Api.delete(`/category/${id}`)
+  return Api.delete(`category/${id}`)
   
 }
 export { addCategory  ,getCategory,deleteCategory};
