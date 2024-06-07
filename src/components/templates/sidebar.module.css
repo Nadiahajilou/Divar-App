@@ -1,0 +1,21 @@
+.sidebar{
+    margin: 30px 40px;
+    width: 300px;
+   
+}
+
+.sidebar h4{
+    margin-bottom: 15px;
+}
+
+.sidebar li{
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.sidebar li p{
+    color: gray;
+    margin-right: 10px;
+    font-weight: 200;
+}

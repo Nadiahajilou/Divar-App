@@ -6,7 +6,7 @@ import { LuTrash2 } from "react-icons/lu";
 import styles from "./categorylist.module.css";
 
 function CategoryList() {
-  const { data, isLoading, error } = useQuery(["getCategory"], getCategory);
+  const { data, isLoading } = useQuery(["getCategory"], getCategory);
   const queryClient = useQueryClient();
 
   const { mutate } = useMutation(deleteCategory, {
